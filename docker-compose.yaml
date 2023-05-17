@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  typescript-essential:
+    build: ./
+    image: ts-essential
+    container_name: ts-essential-con
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    # command: tail -F README.md
+
