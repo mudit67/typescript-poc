@@ -1,11 +1,7 @@
-const character = "mario";
+let character = "mario";
 
-console.log(character);
+const circ = (diameter:number) => {
+  return diameter * Math.PI;
+};
 
-const inputs = document.querySelectorAll("input");
-
-// console.log(inputs);
-
-inputs.forEach((i) => {
-  console.log(i);
-});
+console.log(circ(7))
