@@ -1,14 +1,29 @@
 // Commented code is invalid typescript
 
-type stringOrNum = number | string;
-
-const logDetails = (uid: stringOrNum, item: string) => {
-  console.log(`${item} has uid of ${uid}`);
+let greet: (a: string, b: string) => void;
+greet = (name, greeting) => {
+  console.log(`${greeting} ${name}`);
 };
 
-type objWithName = { name: string; uid: stringOrNum };
-
-const greet = (user: objWithName) => {
-  console.log(`${user.name} has the uid of ${user.uid}`);
-  console.log(`hello, ${user.name}`);
+let calc: (a: number, b: number, c: string) => number;
+calc = (num1, num2, str) => {
+  if (str == "add") {
+    return num1 + num2;
+  } else if (str == "sub") {
+    return num1 - num2;
+  } else {
+    return 0;
+  }
 };
+
+let logDetails: (obj: { name: string; age: number }) => void;
+
+logDetails = (ninja) => {
+  console.log(`${ninja.name} is ${ninja.age} years old!!`);
+};
+logDetails({ name: "modi", age: 70 });
+type person = { name: string; age: number };
+logDetails = (shinobi: person) => {
+  console.log(`${shinobi.name} is ${shinobi.age} years old!!`);
+};
+logDetails({ name: "yoda", age: 140 });
