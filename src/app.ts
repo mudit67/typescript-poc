@@ -1,3 +1,39 @@
+// Interfaces
+
+interface isPerson {
+  name: string;
+  age: number;
+  speak(a: string): void;
+  spend(b: number): number;
+}
+
+const me: isPerson = {
+  name: "modi",
+  age: 18,
+  speak(a): void {
+    // speak(a): { // Invalid ts
+    console.log(a);
+  },
+  spend(b): number {
+    // spend(b): { // Invalid ts
+    console.log(`I spent ${b}`);
+    return b;
+  },
+  //   skills: ["coding","running"] // Invalid ts
+};
+
+console.log(me);
+
+const greet = (pers: isPerson) => {
+  console.log(`hello ${pers.name}`);
+};
+
+greet(me);
+
+// greet({name:"modi"}) // Invalid ts
+
+let person: isPerson;
+
 import Invoice from "./classes/invoice.js";
 
 const inv1 = new Invoice("mario", "work on the new blog", 1000);
