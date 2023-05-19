@@ -1,43 +1,49 @@
 // Commented code is invalid typescript
 
+// Explicit types
+
+let character: string;
+let age: Number;
+let isCoding: boolean;
+
+age = 19;
+// isCoding = "yes";
+
 // Arrays
 
-let names = ["mudit", "unnat", "daksh"];
+let ninjas: string[] = []; //best to initialize an empty array to be able to use the push method
 
-names.push("kushagra");
+// ninjas= [1,2]
 
-// names.push(3)
+ninjas.push("modi");
 
-// names[0] = 7;
+// Union types
 
-let numbers = [1, 2, 34, 5];
+let arr: (string | number)[] = [];
 
-numbers.push(77);
-// numbers.push("modi");
+arr.push("hello");
+arr.push(24);
+// arr.push(true);
 
-let mixed = ["luigi", 24, "shangi-chi", 7, 8, true];
+console.log(arr);
 
-mixed.push("ru");
-mixed.push(70);
-mixed[0] = 7;
-mixed[1] = 7;
+let uid: string | number;
 
-// Objects
+uid = 987653234567;
+uid = "asghgju5423";
 
-let person7 = {
+// Object
+
+let personOne: object;
+
+personOne = { name: "yoshi", age: 50 };
+personOne = ["modi", 70];
+
+let personTwo: { name: string; age: number; class: string };
+
+personTwo = {
   name: "modi",
-  level: "beginner",
   age: 18,
-};
-
-person7.age = 40;
-person7.name = "muddy";
-// person7.age = "24";
-// person7.skills = ["coding","running"];
-
-person7 = {
-  name: "unnat",
-  age: 40,
-  level: "advanced",
-  // skills: ["coding", "gaming"],
+  class: "overload",
+  // skills: ["coding", "running"],
 };
