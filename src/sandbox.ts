@@ -1,21 +1,14 @@
 // Commented code is invalid typescript
 
-let greet: Function;
+type stringOrNum = number | string;
 
-greet = () => {
-  console.log("hello, World!");
+const logDetails = (uid: stringOrNum, item: string) => {
+  console.log(`${item} has uid of ${uid}`);
 };
 
-const add = (a: number, b: number, c: number | string = 10): any => {
-  console.log(a + b);
-  console.log(c);
+type objWithName = { name: string; uid: stringOrNum };
+
+const greet = (user: objWithName) => {
+  console.log(`${user.name} has the uid of ${user.uid}`);
+  console.log(`hello, ${user.name}`);
 };
-
-add(5, 7, "sup");
-
-const subs = (a: number, b: number): number => {
-  return a - b;
-};
-
-let result = subs(7, 17);
-// result = "sup";
