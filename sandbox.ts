@@ -1,49 +1,23 @@
 // Commented code is invalid typescript
 
-// Explicit types
+let age: any = 25;
+age = "twenty five";
+console.log(age);
+age = true;
+console.log(age);
+age = { name: "luigi" };
+console.log(age);
 
-let character: string;
-let age: Number;
-let isCoding: boolean;
+let arr: any[] = [];
 
-age = 19;
-// isCoding = "yes";
+arr.push("modi");
+arr.push(18);
+arr.push("true");
 
-// Arrays
+let ninja: { name: any; age: any };
 
-let ninjas: string[] = []; //best to initialize an empty array to be able to use the push method
+ninja = { name: "hitman", age: 28 };
+console.log(ninja);
 
-// ninjas= [1,2]
-
-ninjas.push("modi");
-
-// Union types
-
-let arr: (string | number)[] = [];
-
-arr.push("hello");
-arr.push(24);
-// arr.push(true);
-
-console.log(arr);
-
-let uid: string | number;
-
-uid = 987653234567;
-uid = "asghgju5423";
-
-// Object
-
-let personOne: object;
-
-personOne = { name: "yoshi", age: 50 };
-personOne = ["modi", 70];
-
-let personTwo: { name: string; age: number; class: string };
-
-personTwo = {
-  name: "modi",
-  age: 18,
-  class: "overload",
-  // skills: ["coding", "running"],
-};
+ninja = { name: 47, age: "twenty eight" };
+console.log(ninja);
