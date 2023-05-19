@@ -1,22 +1,4 @@
-// Classes
-
-class Invoice {
-  //   readonly client: string;
-  //   private details: string;
-  //   amount: number;
-  constructor(
-    readonly client: string,
-    private details: string,
-    public amount: number // access modifiers are required
-  ) {
-    // this.client = c;
-    // this.details = d;
-    // this.amount = a;
-  }
-  format() {
-    return `${this.client} owes ₹${this.amount} for ${this.details}`;
-  }
-}
+import Invoice from "./classes/invoice.js";
 
 const inv1 = new Invoice("mario", "work on the new blog", 1000);
 const inv2 = new Invoice("modi", "coding", 100000);
@@ -26,8 +8,6 @@ invoices.push(inv1);
 invoices.push(inv2);
 
 invoices.forEach((inv) => {
-  //   console.log(inv.client, inv.details, inv.amount, inv.format());
-  //   inv.client = "modi";
   console.log(inv.format());
 });
 
