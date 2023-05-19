@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"tsc sandbox.ts --watch"
+    "start": "tsc -w",
+    "dev": "tsc sandbox.ts --watch",
+    "init": "tsc --init"
   },
   "author": "",
   "license": "ISC",
