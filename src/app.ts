@@ -3,16 +3,16 @@ import ListTemplate from "./classes/listTemplate.js";
 import { Payment } from "./classes/payments.js";
 import { hasFormatter } from "./interfaces/hasFormatter.js";
 
-let docOne: hasFormatter;
-let docTwo: hasFormatter;
+// let docOne: hasFormatter;
+// let docTwo: hasFormatter;
 
-docOne = new Invoice("krish", "website", 1000);
-docTwo = new Payment("darm", "lorem", 1234);
+// docOne = new Invoice("krish", "website", 1000);
+// docTwo = new Payment("darm", "lorem", 1234);
 
 let docs: hasFormatter[] = [];
 
-docs.push(docOne);
-docs.push(docTwo);
+// docs.push(docOne);
+// docs.push(docTwo);
 
 // console.log(docs);
 
@@ -50,3 +50,41 @@ form.addEventListener("submit", (e) => {
   list.render(doc, type.value, "end");
   console.log(doc);
 });
+
+// Generics
+
+const addUID = <T extends { name: string }>(obj: T) => {
+  let Uid = Math.floor(Math.random() * 100);
+  return { ...obj, Uid };
+};
+
+const docOne = addUID({ name: "modi", age: 47 });
+
+// const docTwo = addUID({ skills: "codings", desig: "manager" }); //Invalid as doesn't have the name attribute/ key-value pair
+
+console.log(docOne);
+
+// console.log(docTwo.skills);
+
+// with Interfaces
+
+interface resource<T> {
+  uid: number;
+  resourceName: string;
+  data: T;
+}
+
+const docThree: resource<string> = {
+  uid: 1234,
+  resourceName: "me",
+  data: "qwerty",
+  // data: {name:"qwerty"},
+};
+
+const docFour: resource<string[]> = {
+  uid: 123,
+  resourceName: "asf",
+  data: ["sup"],
+};
+
+console.log(docThree, docFour);
