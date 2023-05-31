@@ -15,10 +15,16 @@ form.addEventListener("submit", (e) => {
 
   let doc: hasFormatter;
 
+  let values: [string, string, number] = [
+    toFrom.value,
+    details.value,
+    amount.valueAsNumber,
+  ];
+
   if (type.value == "invoice") {
-    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
-    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
   const ul = document.querySelector("ul") as HTMLUListElement;
   const list = new ListTemplate(ul);
@@ -26,30 +32,18 @@ form.addEventListener("submit", (e) => {
   console.log(doc);
 });
 
-// Enums
+// Lists
 
-enum ResourceType {
-  Book,
-  Person,
-  Flash_Drive,
-  Movie,
-}
+let tup: [string, number, boolean];
 
-interface Resource<T> {
-  uid: number;
-  resourceType: ResourceType;
-  data: T;
-}
+tup = ["modi", 7, true];
 
-const docOne: Resource<object> = {
-  uid: 12,
-  resourceType: ResourceType.Book,
-  data: { title: "the power of the sun" },
-};
-const docTwo: Resource<object> = {
-  uid: 345,
-  resourceType: ResourceType.Flash_Drive,
-  data: { name: "in the palm of my hand" },
-};
+tup[0] = "sup";
 
-console.log(docOne, docTwo);
+// tup[3] = "12345"; //Invalid
+
+let student: [string, number];
+
+student = ["modi", 1234];
+
+// student = [1234, "qwert"]; // Invalid
